@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="speedtest-cli:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/speedtest_cli_jar</output-path>
+    <root id="archive" name="speedtest-cli.jar">
+      <element id="module-output" name="speedtest-cli" />
+      <element id="archive" name="speedtest.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
