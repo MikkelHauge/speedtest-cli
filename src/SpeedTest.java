@@ -24,6 +24,7 @@ public class SpeedTest {
         if (args.length > 0){
             inputArgument = args[0].toLowerCase();
             if (isValidURL(inputArgument)){
+                System.out.println("Downloading from provided URL: " + inputArgument);
                 validChoice = true;
                 fileUrl = inputArgument;
             }
@@ -70,6 +71,7 @@ public class SpeedTest {
             System.out.println(BLUE + "\nSpeed test results:" + RESET);
             System.out.println("Ping: " + YELLOW + ping + " ms." + RESET);
             System.out.println("Download speed: " + YELLOW + String.format("%.2f", downloadSpeed) + RESET + " Mbps");
+
         } else {
             System.out.println("Error: Invalid argument or URL.");
         }
@@ -119,6 +121,8 @@ public class SpeedTest {
             connection.setRequestMethod("GET");
             connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
             long totalBytes = connection.getContentLength();
+            double totalMB = totalBytes / (1024.0 * 1024.0);
+            System.out.println("Total download size: " + String.format("%.2f", totalMB) + " MB.");
 
             if (totalBytes == -1) {
                 System.out.println(RED + "Unable to determine file size." + RESET);
@@ -132,6 +136,7 @@ public class SpeedTest {
             long downloaded = 0;
 
             while ((bytesRead = inputStream.read(buffer)) != -1) {
+
                 downloaded += bytesRead;
 
                 // Percentage of the file downloaded
