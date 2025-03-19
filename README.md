@@ -1,5 +1,10 @@
 # speedtest-cli
-Just a little program, for testing internet connectivity. Shows download speed in mbps, when it's done, and ping, and a progress bar during download.
+Just a little program, for testing internet connectivity. 
+Shows download speed in mbps, when it's done, and ping, and a progress bar during download.
+See a lil' gif at the bottom of this readme.
+
+There's currently no plans to update the project. 
+Maybe adding option to keep the file after download, when using custom URL, could be a thing, in the future.
 
 Requires java to run - made using java 23 - but should run on every java from v8 and up.
 
@@ -18,7 +23,7 @@ java -jar Speedtest.jar 10
 * 1000, for downloading a 1GB test file
 * Any valid URL to a file, should also work.
 
- Note that the program does not save the file - it just downloads it to the buffer, shows the result and deletes it.
+ Note that the program does not save the file - it just downloads it to the buffer, shows the result and deletes the buffer.
 
 
 Test with a 30MB video file:
